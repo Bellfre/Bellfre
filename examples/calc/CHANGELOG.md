@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### FEATURES
 
+
 - 0.1.3.1 file structure
 
 - Pillar 1 v 1.0
@@ -28,5 +29,7 @@ All notable changes to this project will be documented in this file.
 - 0.3.0-alpha working Bellfre Example Agent
 
 - 0.3.1 checkpoint
+
+- 0.4.0 Milestone & cutover to bellfre repo
 
 

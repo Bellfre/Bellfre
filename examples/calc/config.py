@@ -16,6 +16,12 @@ Future:
     provider implementation (OpenAI, Claude, Ollama, etc.).
 """
 
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 #
 # Agent Information
 #
@@ -59,9 +65,12 @@ REASONING_PROVIDER = "openai"
 # OpenAI
 #
 
-OPENAI_MODEL = "gpt-5.5"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-
+OPENAI_MODEL = os.getenv(
+    "OPENAI_MODEL",
+    "gpt-5.5"
+)
 #
 # Claude
 #
