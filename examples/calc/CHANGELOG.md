@@ -28,4 +28,6 @@ All notable changes to this project will be documented in this file.
 
 - 0.3.0-alpha working Bellfre Example Agent
 
+- 0.3.1 checkpoint
+
 

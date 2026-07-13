@@ -40,19 +40,57 @@ ENABLE_REASONING = True
 # Reasoning Configuration
 #
 
-# Placeholder for future provider selection.
 #
-# Examples:
-#   "placeholder"
-#   "openai"
-#   "claude"
-#   "ollama"
+# Active reasoning provider
 #
-REASONING_PROVIDER = "mock"
+# Supported providers:
+#
+#   mock
+#   openai
+#   claude
+#   gemini
+#   ollama
+#   discovery
+#
+
+REASONING_PROVIDER = "openai"
+
+#
+# OpenAI
+#
 
 OPENAI_MODEL = "gpt-5.5"
 
-OPENAI_API_KEY = ""
+
+#
+# Claude
+#
+
+CLAUDE_MODEL = ""
+
+CLAUDE_API_KEY = ""
+
+#
+# Gemini
+#
+
+GEMINI_MODEL = ""
+
+GEMINI_API_KEY = ""
+
+#
+# Ollama
+#
+
+OLLAMA_URL = "http://localhost:11434"
+
+OLLAMA_MODEL = ""
+
+#
+# Bellfre Discovery
+#
+
+DISCOVERY_NODE = ""
 
 #
 # Logging

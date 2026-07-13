@@ -63,13 +63,16 @@ class CalculatorCapability:
 
     def execute_request(self, request):
         """
-        Convert a user request into a calculation.
+        Convert a Bellfre request into a calculation.
         """
 
         try:
 
-            if "+" in request:
-                a, b = request.split("+")
+            expression = request["input"]
+
+
+            if "+" in expression:
+                a, b = expression.split("+")
                 return self.execute(
                     "add",
                     float(a),
@@ -77,8 +80,8 @@ class CalculatorCapability:
                 )
 
 
-            elif "-" in request:
-                a, b = request.split("-")
+            elif "-" in expression:
+                a, b = expression.split("-")
                 return self.execute(
                     "subtract",
                     float(a),
@@ -86,8 +89,8 @@ class CalculatorCapability:
                 )
 
 
-            elif "*" in request:
-                a, b = request.split("*")
+            elif "*" in expression:
+                a, b = expression.split("*")
                 return self.execute(
                     "multiply",
                     float(a),
@@ -95,8 +98,8 @@ class CalculatorCapability:
                 )
 
 
-            elif "/" in request:
-                a, b = request.split("/")
+            elif "/" in expression:
+                a, b = expression.split("/")
                 return self.execute(
                     "divide",
                     float(a),

@@ -85,8 +85,8 @@ class ReasoningCapability:
         """
 
         return self.execute(request)
-
-    def execute(self, prompt):
+    
+    def execute(self, request):
         """
         Execute reasoning using configured provider.
 
@@ -119,6 +119,7 @@ class ReasoningCapability:
                     "Bellfre Discovery routing is not implemented."
                 )
             }
+
         else:
             return {
                 "success": False,
@@ -126,7 +127,8 @@ class ReasoningCapability:
                 "error": f"Unknown reasoning provider: {provider}"
             }
 
-        result = provider.execute(prompt)
+        result = provider.execute(request)
+
         result["capability"] = self.capability_id
 
         return result

@@ -54,7 +54,7 @@ class Agent:
 
 
 
-    def think(self, request):
+    def think(self, user_input):
         """
         Route a request to the appropriate capability.
 
@@ -63,9 +63,13 @@ class Agent:
         should handle the request.
         """
 
+        request = {
+            "input": user_input
+        }
+
         for capability in self.capabilities:
 
-            if capability.can_handle(request):
+            if capability.can_handle(user_input):
 
                 return capability.execute_request(request)
 
