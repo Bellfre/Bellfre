@@ -24,9 +24,14 @@ build/
 venv/
 env/
 ENV/
+.env
 
 # internal docs
 docs/roadmap/
+docs/stake/
+docs/articles/
+
+/examples/calc/config.py
 
 # ------------------------------------------------------------
 # Testing / Coverage

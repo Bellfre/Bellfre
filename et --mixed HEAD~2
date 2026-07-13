@@ -1,0 +1,94 @@
+[33mcommit 02584ac7c47d521e7b361623cf9ea48c22daf042[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 39214a2 734aa35
+Author: nfceek <bsmith@nfceek.com>
+Date:   Mon Jul 13 15:34:41 2026 -0400
+
+    Merge branch 'main' of https://github.com/nfceek/Bellfre
+
+[1mdiff --cc .gitignore[m
+[1mindex 086c50e,b6e4b80..e02e329[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@@ -29,8 -29,6 +29,11 @@@[m [mENV[m
+  docs/roadmap/[m
+  docs/stake/[m
+  docs/articles/[m
+[32m++<<<<<<< HEAD[m
+[32m +[m
+[32m +/examples/calc/config.py[m
+[32m++=======[m
+[32m++>>>>>>> 734aa3530c30ed7fc696d8af9b657dc64dddf895[m
+  [m
+  # ------------------------------------------------------------[m
+  # Testing / Coverage[m
+[1mdiff --cc examples/calc/config.py[m
+[1mindex d325214,d325214..13fdad9[m
+[1m--- a/examples/calc/config.py[m
+[1m+++ b/examples/calc/config.py[m
+[36m@@@ -40,19 -40,19 +40,58 @@@[m [mENABLE_REASONING = Tru[m
+  # Reasoning Configuration[m
+  #[m
+  [m
+[31m--# Placeholder for future provider selection.[m
+  #[m
+[31m--# Examples:[m
+[31m--#   "placeholder"[m
+[31m--#   "openai"[m
+[31m--#   "claude"[m
+[31m--#   "ollama"[m
+[32m++# Active reasoning provider[m
+[32m++#[m
+[32m++# Supported providers:[m
+[32m++#[m
+[32m++#   mock[m
+[32m++#   openai[m
+[32m++#   claude[m
+[32m++#   gemini[m
+[32m++#   ollama[m
+[32m++#   discovery[m
+[32m++#[m
+[32m++[m
+[32m++REASONING_PROVIDER = "openai"[m
+[32m++[m
+[32m++#[m
+[32m++# OpenAI[m
+  #[m
+[31m--REASONING_PROVIDER = "mock"[m
+  [m
+  OPENAI_MODEL = "gpt-5.5"[m
+  [m
+[31m--OPENAI_API_KEY = ""[m
+[32m++OPENAI_API_KEY = "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"[m
+[32m++[m
+[32m++#[m
+[32m++# Claude[m
+[32m++#[m
+[32m++[m
+[32m++CLAUDE_MODEL = ""[m
+[32m++[m
+[32m++CLAUDE_API_KEY = ""[m
+[32m++[m
+[32m++#[m
+[32m++# Gemini[m
+[32m++#[m
+[32m++[m
+[32m++GEMINI_MODEL = ""[m
+[32m++[m
+[32m++GEMINI_API_KEY = ""[m
+[32m++[m
+[32m++#[m
+[32m++# Ollama[m
+[32m++#[m
+[32m++[m
+[32m++OLLAMA_URL = "http://localhost:11434"[m
+[32m++[m
+[32m++OLLAMA_MODEL = ""[m
+[32m++[m
+[32m++#[m
+[32m++# Bellfre Discovery[m
+[32m++#[m
+[32m++[m
+[32m++DISCOVERY_NODE = ""[m
+  [m
+  #[m
+  # Logging[m

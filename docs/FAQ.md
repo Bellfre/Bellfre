@@ -270,3 +270,44 @@ I think this is one of the most important architectural decisions we've made. It
 ## BR-COST-001: Use deterministic computation whenever possible. 
 
 Invoke an LLM only when reasoning, interpretation, or generation is required.
+
+## *INTERNAL USE ONLY* Business Rule: Database Foreign Keys (v0.x)
+
+Purpose
+
+During Bellfre Foundation development, the database schema is expected to evolve rapidly. To minimize development friction, foreign key constraints will be used only when they are required for the correct operation of the application.
+
+Policy
+
+All tables shall define an appropriate Primary Key.
+Foreign Key constraints are optional during the Foundation (v0.x) phase.
+Foreign Keys should only be implemented when they are required for application correctness or data integrity that cannot reasonably be enforced elsewhere.
+Application code is responsible for validating references between records during registration, updates, and deletes.
+Orphan detection and cleanup utilities will be part of the Registry and maintenance tooling.
+Referential integrity, cascading updates, and cascading deletes will be reviewed during the Database Hardening milestone prior to a production (v1.x) release.
+
+Rationale
+
+This approach:
+
+Reduces schema migration complexity.
+Allows rapid iteration on the Bellfre Foundation.
+Avoids unnecessary MySQL constraint issues during active design.
+Keeps validation logic centralized within the Registry where richer business rules can be enforced.
+
+I would add one engineering guideline alongside it:
+
+Rule: Even without foreign keys, continue to use consistent column names and data types for future compatibility.
+
+For example:
+
+publisher_id BIGINT UNSIGNED NOT NULL
+product_id BIGINT UNSIGNED NOT NULL
+agent_id BIGINT UNSIGNED NOT NULL
+domain_id BIGINT UNSIGNED NOT NULL
+subcategory_id BIGINT UNSIGNED NOT NULL
+
+That way, when you decide to add foreign keys later, the tables are already compatible and the "Database Hardening" milestone becomes mostly a matter of adding constraints rather than redesigning columns.
+
+I think this fits Bellfre's philosophy well: keep the foundation simple, keep the interfaces stable, and postpone infrastructure hardening until the architecture has settled.
+
