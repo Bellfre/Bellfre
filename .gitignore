@@ -1,5 +1,5 @@
 # ============================================================
-# Bellfre v0.1 - Git Ignore
+# Bellfre v0.7.1 - Git Ignore
 # ============================================================
 
 
@@ -17,22 +17,46 @@ __pycache__/
 dist/
 build/
 
-.python-version
 
 # Virtual environments
 .venv/
 venv/
 env/
 ENV/
-.env
 
-# internal docs
+
+# ------------------------------------------------------------
+# uv
+# ------------------------------------------------------------
+
+.uv-cache/
+
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.crt
+
+secrets/
+credentials/
+
+
+# ------------------------------------------------------------
+# Internal Documentation
+# ------------------------------------------------------------
+
 docs/roadmap/
 docs/stake/
 docs/articles/
 docs/images/
 
-/examples/calc/config.py
 
 # ------------------------------------------------------------
 # Testing / Coverage
@@ -41,6 +65,7 @@ docs/images/
 .pytest_cache/
 .coverage
 .coverage.*
+
 htmlcov/
 
 .tox/
@@ -68,25 +93,6 @@ htmlcov/
 *.swo
 *~
 
-.DS_Store
-Thumbs.db
-
-
-# ------------------------------------------------------------
-# Environment / Secrets
-# ------------------------------------------------------------
-
-.env
-.env.*
-!.env.example
-
-*.pem
-*.key
-*.crt
-
-secrets/
-credentials/
-
 
 # ------------------------------------------------------------
 # Logs
@@ -100,12 +106,12 @@ logs/
 # Local Database Files
 # ------------------------------------------------------------
 
-# Registry development database
 *.sqlite
 *.sqlite3
 *.db
 
 registry/data/
+registry/local/
 
 
 # ------------------------------------------------------------
@@ -150,6 +156,7 @@ site/
 .AppleDouble
 .LSOverride
 
+Thumbs.db
 ehthumbs.db
 Desktop.ini
 
@@ -170,9 +177,6 @@ temp/
 # Bellfre Local Development
 # ------------------------------------------------------------
 
-# Local registry data
-registry/local/
-
 # Generated manifests
 generated/
 
@@ -188,6 +192,7 @@ test_output/
 # ------------------------------------------------------------
 
 node_modules/
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

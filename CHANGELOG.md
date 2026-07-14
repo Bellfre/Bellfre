@@ -52,6 +52,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.6.2 mv files
 
+- My recommendation for Milestone 0.7.0
+
 
 
 ### FIX
