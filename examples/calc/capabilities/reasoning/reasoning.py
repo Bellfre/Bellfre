@@ -1,6 +1,6 @@
 """
 Bellfre Example Agent Capability
-Reasoning Capability v0.3
+Reasoning Capability v0.4
 
 Purpose:
     Provides a generic reasoning interface for Bellfre agents.
@@ -10,52 +10,45 @@ Design Philosophy:
     The agent never calls an LLM directly.
 
     The agent requests a capability.
-    The capability determines how reasoning is provided.
+    The capability determines WHAT work
+    should be performed.
 
-    Today this may route to:
-        - Mock Provider
-        - ChatGPT
-        - Claude
-        - Gemini
-        - Local LLM
+    The Bellfre Policy Layer determines
+    HOW that work is executed.
 
-    Future routing may include:
-        - Another Bellfre agent discovered through BAT/BDN.
-
-This keeps Bellfre agents independent from any single
-AI provider or model ecosystem.
+This keeps Bellfre agents independent from
+any specific AI provider or execution policy.
 """
 
-from .providers.mock import MockProvider
-from .providers.openai import OpenAIProvider
-from .providers.claude import ClaudeProvider
-from .providers.gemini import GeminiProvider
-from .providers.ollama import OllamaProvider
+from .policy import ReasoningPolicy
 
-from config import REASONING_PROVIDER
 
 class ReasoningCapability:
     """
     Generic reasoning capability implementation.
     """
+
     capability_id = "mathematics.explain"
 
     name = "Reasoning Capability"
 
     description = (
         "Provides natural language reasoning, explanations, "
-        "and contextual responses using the configured provider."
+        "and contextual responses using the configured policy."
     )
 
     def can_handle(self, request):
         """
-        Determine whether this capability should handle a request.
+        Determine whether this capability
+        should handle a request.
 
         MVP routing:
-            Non-mathematical questions are sent here.
+            Non-arithmetic requests
+            are sent here.
 
         Future:
-            Intent classification and BCT matching.
+            Intent classification
+            and BAT capability matching.
         """
 
         if not isinstance(request, str):
@@ -68,7 +61,9 @@ class ReasoningCapability:
             "/"
         ]
 
-        # Calculator gets arithmetic requests.
+        #
+        # Calculator receives arithmetic.
+        #
         if any(
             operator in request
             for operator in operators
@@ -79,59 +74,28 @@ class ReasoningCapability:
 
     def execute_request(self, request):
         """
-        Execute a reasoning request.
-
         Required capability interface.
         """
 
         return self.execute(request)
-    
+
     def execute(self, request):
         """
-        Execute reasoning using configured provider.
-
-        Provider abstraction remains hidden
-        from the agent.
+        Execute reasoning through the
+        Bellfre Policy Layer.
         """
 
-        provider = REASONING_PROVIDER.lower()
+        policy = ReasoningPolicy()
 
-        if provider == "mock":
-            provider = MockProvider()
+        result = policy.execute(request)
 
-        elif provider == "openai":
-            provider = OpenAIProvider()
-
-        elif provider == "claude":
-            provider = ClaudeProvider()
-
-        elif provider == "gemini":
-            provider = GeminiProvider()
-
-        elif provider == "ollama":
-            provider = OllamaProvider()
-
-        elif provider == "discovery":
-            return {
-                "success": False,
-                "capability": self.capability_id,
-                "error": (
-                    "Bellfre Discovery routing is not implemented."
-                )
-            }
-
-        else:
-            return {
-                "success": False,
-                "capability": self.capability_id,
-                "error": f"Unknown reasoning provider: {provider}"
-            }
-
-        result = provider.execute(request)
-
+        #
+        # Capabilities identify themselves.
+        #
         result["capability"] = self.capability_id
 
         return result
+
 
 #
 # Standalone Test
@@ -141,10 +105,8 @@ if __name__ == "__main__":
 
     reasoning = ReasoningCapability()
 
-
     result = reasoning.execute_request(
         "How were modern mathematical symbols developed?"
     )
-
 
     print(result)

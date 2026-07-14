@@ -32,4 +32,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.4.0 Milestone & cutover to bellfre repo
 
+- 0.4.5 EOD and update for config file to not store sensitive data
+
+- 0.4.6 Add some images for calculator program
+
 
