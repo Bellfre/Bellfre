@@ -30,6 +30,7 @@ ENV/
 docs/roadmap/
 docs/stake/
 docs/articles/
+docs/images/
 
 /examples/calc/config.py
 

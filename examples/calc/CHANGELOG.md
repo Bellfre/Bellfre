@@ -40,4 +40,6 @@ All notable changes to this project will be documented in this file.
 
 - 0.6.0 Milestone - codify foundation and our mission
 
+- 0.6.1 rm website
+
 
