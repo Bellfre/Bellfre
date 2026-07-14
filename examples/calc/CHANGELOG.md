@@ -36,4 +36,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.4.6 Add some images for calculator program
 
+- 0.5.0 milestone - adding policy stub to calculator project. success and positive testing of calc program
+
+- 0.6.0 Milestone - codify foundation and our mission
+
 
