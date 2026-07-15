@@ -158,3 +158,13 @@ Bellfre is an exploration of that missing discovery layer.
 Bellfre is an open-source project. Contributions, ideas, specifications, and implementation feedback are welcome as the project evolves.
 
 The project is intentionally being developed through open experimentation and incremental standards development.
+
+
+# Bellfre
+
+The Identity and Discovery Layer for AI Agents
+
+[![CI](https://github.com/YOUR_ORG/Bellfre/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_ORG/Bellfre/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Version](https://img.shields.io/github/v/tag/YOUR_ORG/Bellfre)](https://github.com/YOUR_ORG/Bellfre/tags)
