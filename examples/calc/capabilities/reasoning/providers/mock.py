@@ -13,7 +13,6 @@ from .base import ReasoningProvider
 
 
 class MockProvider(ReasoningProvider):
-
     provider_name = "mock"
     model_name = "none"
 
@@ -25,7 +24,6 @@ class MockProvider(ReasoningProvider):
             "model": self.model_name,
             "prompt": prompt,
             "response": (
-                "Mock reasoning provider. "
-                "No external reasoning engine configured."
-            )
+                "Mock reasoning provider. No external reasoning engine configured."
+            ),
         }

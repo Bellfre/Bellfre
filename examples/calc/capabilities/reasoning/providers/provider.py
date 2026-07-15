@@ -6,7 +6,6 @@ Base class for all reasoning providers.
 
 
 class ReasoningProvider:
-
     provider_name = "unknown"
 
     def execute(self, prompt):
@@ -16,6 +15,4 @@ class ReasoningProvider:
         Must return a standardized Bellfre response.
         """
 
-        raise NotImplementedError(
-            "Reasoning providers must implement execute()."
-        )
+        raise NotImplementedError("Reasoning providers must implement execute().")

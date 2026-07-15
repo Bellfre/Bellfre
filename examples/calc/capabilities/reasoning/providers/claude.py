@@ -1,7 +1,7 @@
 from .base import ReasoningProvider
 
-class ClaudeProvider(ReasoningProvider):
 
+class ClaudeProvider(ReasoningProvider):
     provider_name = "claude"
 
     def execute(self, prompt):
@@ -9,5 +9,5 @@ class ClaudeProvider(ReasoningProvider):
         return {
             "success": False,
             "provider": "claude",
-            "error": "Claude connector not implemented."
+            "error": "Claude connector not implemented.",
         }

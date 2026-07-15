@@ -29,18 +29,13 @@ class CalculatorCapability:
     Deterministic arithmetic capability.
     """
 
-
     capability_id = "arithmetic.calculate"
-
 
     name = "Calculator Capability"
 
-
     description = (
-        "Performs mathematical calculations using "
-        "deterministic local execution."
+        "Performs mathematical calculations using deterministic local execution."
     )
-
 
     def can_handle(self, request):
         """
@@ -50,16 +45,9 @@ class CalculatorCapability:
         if not isinstance(request, str):
             return False
 
-
         operators = ["+", "-", "*", "/"]
 
-
-        return any(
-            operator in request
-            for operator in operators
-        )
-
-
+        return any(operator in request for operator in operators)
 
     def execute_request(self, request):
         """
@@ -67,60 +55,28 @@ class CalculatorCapability:
         """
 
         try:
-
             expression = request["input"]
-
 
             if "+" in expression:
                 a, b = expression.split("+")
-                return self.execute(
-                    "add",
-                    float(a),
-                    float(b)
-                )
-
+                return self.execute("add", float(a), float(b))
 
             elif "-" in expression:
                 a, b = expression.split("-")
-                return self.execute(
-                    "subtract",
-                    float(a),
-                    float(b)
-                )
-
+                return self.execute("subtract", float(a), float(b))
 
             elif "*" in expression:
                 a, b = expression.split("*")
-                return self.execute(
-                    "multiply",
-                    float(a),
-                    float(b)
-                )
-
+                return self.execute("multiply", float(a), float(b))
 
             elif "/" in expression:
                 a, b = expression.split("/")
-                return self.execute(
-                    "divide",
-                    float(a),
-                    float(b)
-                )
+                return self.execute("divide", float(a), float(b))
 
-
-            return {
-                "success": False,
-                "error": "Unable to parse calculation"
-            }
-
+            return {"success": False, "error": "Unable to parse calculation"}
 
         except Exception as e:
-
-            return {
-                "success": False,
-                "error": str(e)
-            }
-
-
+            return {"success": False, "error": str(e)}
 
     def execute(self, operation, a, b):
         """
@@ -128,7 +84,6 @@ class CalculatorCapability:
         """
 
         try:
-
             if operation == "add":
                 result = a + b
 
@@ -139,62 +94,34 @@ class CalculatorCapability:
                 result = a * b
 
             elif operation == "divide":
-
                 if b == 0:
-                    return {
-                        "success": False,
-                        "error": "Cannot divide by zero"
-                    }
+                    return {"success": False, "error": "Cannot divide by zero"}
 
                 result = a / b
 
             else:
-
-                return {
-                    "success": False,
-                    "error": f"Unknown operation: {operation}"
-                }
-
+                return {"success": False, "error": f"Unknown operation: {operation}"}
 
             return {
                 "success": True,
                 "capability": self.capability_id,
                 "operation": operation,
-                "input": {
-                    "a": a,
-                    "b": b
-                },
-                "result": result
+                "input": {"a": a, "b": b},
+                "result": result,
             }
-
 
         except Exception as e:
-
-            return {
-                "success": False,
-                "error": str(e)
-            }
-
+            return {"success": False, "error": str(e)}
 
 
 if __name__ == "__main__":
-
     calc = CalculatorCapability()
 
-    tests = [
-        "10+5",
-        "10-5",
-        "10*5",
-        "10/5"
-    ]
-
+    tests = ["10+5", "10-5", "10*5", "10/5"]
 
     for test in tests:
-
         print(test)
 
-        print(
-            calc.execute_request(test)
-        )
+        print(calc.execute_request(test))
 
         print()

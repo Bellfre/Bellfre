@@ -68,13 +68,13 @@ class ReasoningPolicy:
         elif provider == "discovery":
             return {
                 "success": False,
-                "error": "Bellfre Discovery routing is not implemented."
+                "error": "Bellfre Discovery routing is not implemented.",
             }
 
         else:
             return {
                 "success": False,
-                "error": f"Unknown reasoning provider: {provider}"
+                "error": f"Unknown reasoning provider: {provider}",
             }
 
         #

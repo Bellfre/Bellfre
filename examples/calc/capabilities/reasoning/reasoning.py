@@ -54,20 +54,12 @@ class ReasoningCapability:
         if not isinstance(request, str):
             return False
 
-        operators = [
-            "+",
-            "-",
-            "*",
-            "/"
-        ]
+        operators = ["+", "-", "*", "/"]
 
         #
         # Calculator receives arithmetic.
         #
-        if any(
-            operator in request
-            for operator in operators
-        ):
+        if any(operator in request for operator in operators):
             return False
 
         return True
@@ -102,7 +94,6 @@ class ReasoningCapability:
 #
 
 if __name__ == "__main__":
-
     reasoning = ReasoningCapability()
 
     result = reasoning.execute_request(

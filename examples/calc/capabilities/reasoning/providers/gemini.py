@@ -1,7 +1,7 @@
 from .base import ReasoningProvider
 
-class GeminiProvider(ReasoningProvider):
 
+class GeminiProvider(ReasoningProvider):
     provider_name = "gemini"
 
     def execute(self, prompt):
@@ -9,5 +9,5 @@ class GeminiProvider(ReasoningProvider):
         return {
             "success": False,
             "provider": "gemini",
-            "error": "Gemini connector not implemented."
+            "error": "Gemini connector not implemented.",
         }

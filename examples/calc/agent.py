@@ -14,7 +14,6 @@ Architecture:
 
 
 class Agent:
-
     def __init__(self, name, version="0.1.0"):
 
         self.name = name
@@ -23,15 +22,12 @@ class Agent:
         self.memory = []
         self.capabilities = []
 
-
     def remember(self, item):
         """
         Store agent memory.
         """
 
         self.memory.append(item)
-
-
 
     def add_capability(self, capability):
         """
@@ -40,19 +36,12 @@ class Agent:
 
         self.capabilities.append(capability)
 
-
-
     def list_capabilities(self):
         """
         Return available capability IDs.
         """
 
-        return [
-            capability.capability_id
-            for capability in self.capabilities
-        ]
-
-
+        return [capability.capability_id for capability in self.capabilities]
 
     def think(self, user_input):
         """
@@ -63,20 +52,15 @@ class Agent:
         should handle the request.
         """
 
-        request = {
-            "input": user_input
-        }
+        request = {"input": user_input}
 
         for capability in self.capabilities:
-
             if capability.can_handle(user_input):
-
                 return capability.execute_request(request)
-
 
         return {
             "success": False,
             "agent": self.name,
             "error": "No capability available",
-            "available_capabilities": self.list_capabilities()
+            "available_capabilities": self.list_capabilities(),
         }

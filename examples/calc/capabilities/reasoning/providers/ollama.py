@@ -1,7 +1,7 @@
 from .base import ReasoningProvider
 
-class OllamaProvider(ReasoningProvider):
 
+class OllamaProvider(ReasoningProvider):
     provider_name = "ollama"
 
     def execute(self, prompt):
@@ -9,5 +9,5 @@ class OllamaProvider(ReasoningProvider):
         return {
             "success": False,
             "provider": "ollama",
-            "error": "Ollama connector not implemented."
+            "error": "Ollama connector not implemented.",
         }
