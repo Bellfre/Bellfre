@@ -6,7 +6,15 @@ requires-python = ">=3.10"
 dependencies = [
     "openai>=2.45.0",
     "python-dotenv>=1.0.0",
+    "tabulate>=0.10.0",
 ]
 
 [tool.uv]
 package = false
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.411",
+    "pytest>=9.1.1",
+    "ruff>=0.15.21",
+]
