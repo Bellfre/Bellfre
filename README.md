@@ -164,7 +164,7 @@ The project is intentionally being developed through open experimentation and in
 
 The Identity and Discovery Layer for AI Agents
 
-[![CI](https://github.com/YOUR_ORG/Bellfre/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_ORG/Bellfre/actions)
+[![CI](https://github.com/Bellfre/Bellfre/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_ORG/Bellfre/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Version](https://img.shields.io/github/v/tag/YOUR_ORG/Bellfre)](https://github.com/YOUR_ORG/Bellfre/tags)
