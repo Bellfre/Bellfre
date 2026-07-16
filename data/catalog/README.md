@@ -1,8 +1,8 @@
-# Bellfre Agent Census (BAC)
+# Bellfre Agent catalog (BAC)
 
-The **Bellfre Agent Census (BAC)** is a curated research catalog of publicly known AI agents, organizations, and communication protocols.
+The **Bellfre Agent catalog (BAC)** is a curated research catalog of publicly known AI agents, organizations, and communication protocols.
 
-The census is **not** the Bellfre Registry and does not assign Bellfre Unique Identifiers (BUIs). Its purpose is to understand the emerging AI agent ecosystem, identify common metadata, validate Bellfre Agent Tag (BAT) requirements, and provide the foundation for future registry development.
+The catalog is **not** the Bellfre Registry and does not assign Bellfre Unique Identifiers (BUIs). Its purpose is to understand the emerging AI agent ecosystem, identify common metadata, validate Bellfre Agent Tag (BAT) requirements, and provide the foundation for future registry development.
 
 ## Objectives
 
@@ -16,7 +16,7 @@ The census is **not** the Bellfre Registry and does not assign Bellfre Unique Id
 
 ```text
 data/
-└── census/
+└── catalog/
     ├── README.md
     ├── agents.csv
     ├── organizations.csv
@@ -77,7 +77,7 @@ The following status values are currently defined:
 
 ## Current Scope
 
-During Milestone 8.5, the census serves as a research dataset only.
+During Milestone 8.5, the catalog serves as a research dataset only.
 
 It does **not**:
 
@@ -91,13 +91,13 @@ Those capabilities are planned for future Bellfre milestones.
 
 ## Long-Term Vision
 
-The Bellfre Agent Census represents the first stage of the Bellfre ecosystem.
+The Bellfre Agent catalog represents the first stage of the Bellfre ecosystem.
 
 ```text
 Discover Agent
        │
        ▼
-Bellfre Agent Census (BAC)
+Bellfre Agent catalog (BAC)
        │
        ▼
 Assign Bellfre Unique Identifier (BUI)
@@ -109,4 +109,4 @@ Generate Bellfre Agent Tag (BAT)
 Publish to Bellfre Registry
 ```
 
-As Bellfre evolves, information collected in the census will inform the design of the Bellfre Registry while remaining a valuable historical and research resource.
+As Bellfre evolves, information collected in the catalog will inform the design of the Bellfre Registry while remaining a valuable historical and research resource.

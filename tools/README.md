@@ -4,17 +4,17 @@ The **tools** directory contains developer utilities used to support the Bellfre
 
 ## Current Tools
 
-### `census.py`
+### `catalog.py`
 
 The first Bellfre utility.
 
-Reads and displays the **Bellfre Agent Census (BAC)** stored in `data/census/`. This tool serves as the starting point for cataloging publicly known AI agents and validating the census data as the Bellfre ecosystem grows.
+Reads and displays the **Bellfre Agent catalog (BAC)** stored in `data/catalog/`. This tool serves as the starting point for cataloging publicly known AI agents and validating the catalog data as the Bellfre ecosystem grows.
 
 ## Future Tools
 
 As Bellfre evolves, this directory may include utilities for:
 
-* Census validation
+* catalog validation
 * Agent Card retrieval
 * Registry synchronization
 * BUI generation

@@ -1,5 +1,5 @@
 """
-Bellfre Agent Census (BAC)
+Bellfre Agent catalog (BAC)
 Research & Discovery Console
 
 Milestone 8.5
@@ -18,7 +18,7 @@ VERSION = "0.1"
 MILESTONE = "8.5"
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data" / "census"
+DATA = ROOT / "data" / "catalog"
 
 AGENTS = DATA / "agents.csv"
 ORGANIZATIONS = DATA / "organizations.csv"
@@ -88,7 +88,7 @@ def print_table(title, rows):
 def display_agents():
     clear()
     print_table(
-        "Bellfre Agent Census",
+        "Bellfre Agent catalog",
         load_csv(AGENTS),
     )
     pause()
@@ -117,7 +117,7 @@ def display_everything():
     clear()
 
     print_table(
-        "Bellfre Agent Census",
+        "Bellfre Agent catalog",
         load_csv(AGENTS),
     )
 
@@ -147,7 +147,7 @@ def display_stats():
     prots = load_csv(PROTOCOLS)
 
     print("=" * 72)
-    print("Bellfre Census Statistics")
+    print("Bellfre catalog Statistics")
     print("=" * 72)
 
     print(f"Agents        : {len(agents)}")
@@ -169,7 +169,7 @@ def header():
 
     print("=" * 72)
     print(" Bellfre")
-    print(" Agent Census (BAC)")
+    print(" Agent catalog (BAC)")
     print(" Research & Discovery Console")
     print("-" * 72)
     print(f" Version   : {VERSION}")
@@ -197,7 +197,7 @@ def menu():
         print()
         print(" 4) Display Everything")
         print()
-        print(" 5) Census Statistics")
+        print(" 5) catalog Statistics")
         print()
         print(" 6) Verify Agent Cards      (Milestone 9)")
         print(" 7) Import Agents           (Future)")
