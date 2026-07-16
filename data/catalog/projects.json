@@ -1,0 +1,32 @@
+[
+  {
+    "project_id": "PROJ0001",
+    "name": "Agent2Agent Project",
+    "organization_id": "ORG0100",
+    "website": "https://github.com/a2aproject",
+    "repository": "https://github.com/a2aproject/a2a-python",
+    "category": "Standards Project",
+    "status": "ACTIVE",
+    "notes": "Open governance project hosted by the Linux Foundation."
+  },
+  {
+    "project_id": "PROJ0002",
+    "name": "A2A Python SDK",
+    "organization_id": "ORG0100",
+    "website": "https://github.com/a2aproject/a2a-python",
+    "repository": "https://github.com/a2aproject/a2a-python",
+    "category": "Software Development Kit",
+    "status": "ACTIVE",
+    "notes": "Official Python SDK implementation of the A2A protocol."
+  },
+  {
+    "project_id": "PROJ0003",
+    "name": "A2A Specification",
+    "organization_id": "ORG0100",
+    "website": "https://a2aproject.github.io/A2A",
+    "repository": "https://github.com/a2aproject/A2A",
+    "category": "Protocol Specification",
+    "status": "ACTIVE",
+    "notes": "Official Agent2Agent protocol specification."
+  }
+]

@@ -4,7 +4,120 @@
     "name": "A2A Samples",
     "website": "https://github.com/a2aproject/a2a-python",
     "type": "Open Source",
+    "roles": [
+      "Sample Provider"
+    ],
     "status": "ACTIVE",
+    "verification": "KNOWN",
+    "source": "A2A Python SDK Repository",
     "notes": "Official A2A sample agents"
+  },
+  {
+    "organization_id": "ORG0100",
+    "name": "Linux Foundation",
+    "website": "https://www.linuxfoundation.org",
+    "type": "Standards Foundation",
+    "roles": [
+      "Project Host",
+      "Governance Body"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Hosts the Agent2Agent project under neutral open governance."
+  },
+  {
+    "organization_id": "ORG0101",
+    "name": "Google",
+    "website": "https://google.com",
+    "type": "Technology Company",
+    "roles": [
+      "Protocol Originator",
+      "Founding Contributor"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Created and transferred the Agent2Agent protocol specification, SDKs, and developer tooling."
+  },
+  {
+    "organization_id": "ORG0102",
+    "name": "Amazon Web Services",
+    "website": "https://aws.amazon.com",
+    "type": "Cloud Technology Company",
+    "roles": [
+      "Founding Contributor",
+      "Validator"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Supports A2A ecosystem development and agentic AI infrastructure."
+  },
+  {
+    "organization_id": "ORG0103",
+    "name": "Cisco",
+    "website": "https://www.cisco.com",
+    "type": "Technology Company",
+    "roles": [
+      "Founding Contributor",
+      "Validator"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Contributes interoperability components and agent ecosystem technologies."
+  },
+  {
+    "organization_id": "ORG0104",
+    "name": "Microsoft",
+    "website": "https://www.microsoft.com",
+    "type": "Technology Company",
+    "roles": [
+      "Founding Contributor"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Participates in open agent interoperability standards development."
+  },
+  {
+    "organization_id": "ORG0105",
+    "name": "Salesforce",
+    "website": "https://www.salesforce.com",
+    "type": "Enterprise Software Company",
+    "roles": [
+      "Founding Contributor"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Participates in A2A ecosystem development through Agentforce initiatives."
+  },
+  {
+    "organization_id": "ORG0106",
+    "name": "SAP",
+    "website": "https://www.sap.com",
+    "type": "Enterprise Software Company",
+    "roles": [
+      "Founding Contributor"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Contributes to enterprise agent interoperability standards."
+  },
+  {
+    "organization_id": "ORG0107",
+    "name": "ServiceNow",
+    "website": "https://www.servicenow.com",
+    "type": "Enterprise Software Company",
+    "roles": [
+      "Founding Contributor"
+    ],
+    "status": "KNOWN",
+    "verification": "ATTRIBUTED",
+    "source": "A2A Project Announcement",
+    "notes": "Participates in A2A development and enterprise agent platform integration."
   }
 ]
