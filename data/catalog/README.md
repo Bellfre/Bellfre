@@ -18,14 +18,14 @@ The catalog is **not** the Bellfre Registry and does not assign Bellfre Unique I
 data/
 └── catalog/
     ├── README.md
-    ├── agents.csv
-    ├── organizations.csv
-    └── protocols.csv
+    ├── agents.json
+    ├── organizations.json
+    └── protocols.json
 ```
 
 ## Data Files
 
-### agents.csv
+### agents.json
 
 Contains one record for each known AI agent.
 
@@ -41,7 +41,7 @@ Typical information includes:
 * Discovery source
 * Research notes
 
-### organizations.csv
+### organizations.json
 
 Catalog of organizations responsible for developing or maintaining AI agents.
 
@@ -52,7 +52,7 @@ Examples include:
 * Research institutions
 * Community projects
 
-### protocols.csv
+### protocols.json
 
 Catalog of communication protocols used by AI agents.
 

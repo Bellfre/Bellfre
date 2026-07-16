@@ -1,2 +1,0 @@
-name,organization,framework,protocol,status,agent_card_url,repository,source,notes
-Sample Agent,A2A Samples,A2A,A2A,Verified,http://127.0.0.1:41241/.well-known/agent-card.json,https://github.com/a2aproject/a2a-python,A2A SDK,Local SDK sample

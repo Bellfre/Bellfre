@@ -1,0 +1,18 @@
+[
+  {
+    "protocol_id": "PROT0001",
+    "name": "A2A",
+    "version": "1.0",
+    "specification": "https://a2aproject.github.io/A2A",
+    "status": "ACTIVE",
+    "notes": "Agent2Agent Protocol"
+  },
+  {
+    "protocol_id": "PROT0002",
+    "name": "A2A",
+    "version": "0.3",
+    "specification": "https://a2aproject.github.io/A2A",
+    "status": "LEGACY",
+    "notes": "Compatibility protocol"
+  }
+]

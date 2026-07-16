@@ -1,0 +1,10 @@
+[
+  {
+    "organization_id": "ORG0001",
+    "name": "A2A Samples",
+    "website": "https://github.com/a2aproject/a2a-python",
+    "type": "Open Source",
+    "status": "ACTIVE",
+    "notes": "Official A2A sample agents"
+  }
+]

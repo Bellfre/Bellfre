@@ -10,6 +10,19 @@ All notable changes to this project will be documented in this file.
 ### FEATURES
 
 
+- Milestone 0.8.5 - Bellfre Admin Console for display of known agents from catalog
+
+- 0.8.5a rn census to catalog
+
+
+
+## v0.7.7
+
+
+
+### FEATURES
+
+
 - 0.1.0 rn project to bellfre
 
 - 01.2 foundations/spec/manifest & capabilites files updated
@@ -53,6 +66,10 @@ All notable changes to this project will be documented in this file.
 - 0.6.2 mv files
 
 - My recommendation for Milestone 0.7.0
+
+- 0.7.1 Milestone add uv
+
+- 0.7.7 checkpoint add test for ci and pytest & fix yml for node 20 v 24
 
 
 

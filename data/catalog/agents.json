@@ -1,0 +1,24 @@
+[
+  {
+    "agent_id": "A000001",
+    "name": "Sample Agent",
+    "organization": {
+      "name": "A2A Samples"
+    },
+    "framework": "A2A",
+    "protocols": [
+      {
+        "name": "A2A"
+      }
+    ],
+    "status": "VERIFIED",
+    "agent_card": {
+      "url": "http://127.0.0.1:41241/.well-known/agent-card.json"
+    },
+    "repository": "https://github.com/a2aproject/a2a-python",
+    "source": {
+      "name": "A2A SDK"
+    },
+    "notes": "Local SDK sample"
+  }
+]
