@@ -1,0 +1,122 @@
+# Bellfre Manifest Template v0.1
+
+Copy this file as `bellfre.yaml` for a new Bellfre-enabled agent.
+
+```yaml
+manifest:
+  version: "1.0"
+
+
+agent:
+
+  # Permanent Bellfre Unique Identifier
+  bui: ""
+
+  # Registered publisher reference
+  publisher_slug: ""
+
+  publisher:
+    name: ""
+
+  # Agent information
+  product: ""
+  name: ""
+  version: ""
+
+  description: >
+    Describe what this agent does.
+
+
+runtime:
+
+  # Primary implementation language
+  language: ""
+
+  # Optional communication protocol
+  protocol: ""
+
+
+endpoint:
+
+  # Optional external endpoint
+  url: ""
+
+
+capabilities:
+
+  - id: ""
+
+    # Example:
+    # deterministic
+    # reasoning
+    # tool
+    type: ""
+
+    description: >
+      Describe this capability.
+
+    implementation:
+
+      # Python module reference
+      module: ""
+
+
+execution:
+
+  # Application startup file
+  entrypoint: ""
+```
+
+---
+
+## Required Minimum Fields
+
+A valid Bellfre Manifest requires:
+
+```yaml
+manifest.version
+
+agent.bui
+agent.name
+agent.version
+
+runtime.language
+
+capabilities
+
+execution.entrypoint
+```
+
+---
+
+## Capability Naming
+
+Capabilities should use a namespace format:
+
+Recommended:
+
+```text
+domain.action
+```
+
+Examples:
+
+```text
+arithmetic.calculate
+mathematics.explain
+finance.analyze
+document.summarize
+```
+
+---
+
+## Implementation Notes
+
+The implementation field is optional.
+
+It exists to help local runtimes locate code.
+
+Future registry versions may only require capability metadata and may omit implementation details.
+
+```
+```

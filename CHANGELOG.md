@@ -18,6 +18,12 @@ All notable changes to this project will be documented in this file.
 
 - 0.8.6.0 EOD
 
+- 0.8.7 BOD - fix CI error in git push
+
+- 0.8.7a fix CI - file tools catalog.py
+
+- 0.8.9 - Discovery of a2a protocol - AgentCard - Server
+
 
 
 ## v0.7.7

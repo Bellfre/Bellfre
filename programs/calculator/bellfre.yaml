@@ -1,21 +1,21 @@
-bellfre:
+manifest:
   version: "1.0"
 
 agent:
 
-  # Permanent Bellfre identity
+  # Permanent Bellfre Unique Identifier
   bui: "1.301.0304.B42.001"
 
-  # Registered owner reference
+  # Registered publisher identifier
   publisher_slug: "B42"
 
-  # Publisher reference information
   publisher:
     name: "Bellfre"
 
-  # Agent information
   product: "Calculator"
+
   name: "Bellfre Calculator"
+
   version: "0.1.0"
 
   description: >
@@ -23,34 +23,41 @@ agent:
     mathematical calculations and can be extended with
     reasoning capabilities.
 
-
 runtime:
 
-  language: python
+  language: "python"
 
+  protocol: "a2a"
+
+endpoint:
+
+  # Local development endpoint
+  url: "http://localhost:8000"
 
 capabilities:
 
   - id: arithmetic.calculate
+
     type: deterministic
+
     description: >
       Performs mathematical calculations using local
       execution without requiring an LLM.
 
     implementation:
-      path: capabilities/calculator/calculator.py
-
+      module: "capabilities.calculator.calculator"
 
   - id: mathematics.explain
+
     type: reasoning
+
     description: >
       Provides mathematical explanations, concepts,
       and historical context using reasoning capability.
 
     implementation:
-      path: capabilities/reasoning/reasoning.py
-
+      module: "capabilities.reasoning.reasoning"
 
 execution:
 
-  entrypoint: run.py
+  entrypoint: "run.py"
