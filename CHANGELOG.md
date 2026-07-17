@@ -14,6 +14,10 @@ All notable changes to this project will be documented in this file.
 
 - 0.8.5a rn census to catalog
 
+- 0.8.5b update files for json structure
+
+- 0.8.6.0 EOD
+
 
 
 ## v0.7.7
