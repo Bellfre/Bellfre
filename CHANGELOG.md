@@ -24,6 +24,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.8.9 - Discovery of a2a protocol - AgentCard - Server
 
+- 0.9.0a: add Bellfre manifest foundation and validation
+
 
 
 ## v0.7.7
