@@ -1,4 +1,7 @@
-from bellfre.capability import CapabilityRequest
+from bellfre.capability import (
+    CapabilityProvider,
+    CapabilityRequest,
+)
 
 
 def test_capability_request():
@@ -9,5 +12,36 @@ def test_capability_request():
 
     assert (
         request.capability_id
+        == "arithmetic.calculate"
+    )
+
+
+def test_capability_provider():
+
+    from bellfre.identity import AgentIdentity
+
+    manifest = {
+        "agent": {
+            "bui": "1.301.0304.B42.001",
+            "name": "Bellfre Calculator",
+        },
+        "capabilities": [
+            {
+                "id": "arithmetic.calculate"
+            }
+        ],
+    }
+
+    identity = AgentIdentity(manifest)
+
+    provider = CapabilityProvider(
+        identity,
+        "arithmetic.calculate",
+    )
+
+    assert provider.name == "Bellfre Calculator"
+    assert provider.bui == "1.301.0304.B42.001"
+    assert (
+        provider.capability_id
         == "arithmetic.calculate"
     )
