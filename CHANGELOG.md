@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.1.b ci fix
 
+- 0.9.1: stabilize foundation and SDK architecture
+
+- 0.9.2 milestone - add discovery
+
 
 
 ## v0.9b0
