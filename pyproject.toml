@@ -1,6 +1,6 @@
 [project]
 name = "bellfre"
-version = "0.7.0"
+version = "0.9b.0"
 description = "Bellfre Agent Tag infrastructure"
 requires-python = ">=3.10"
 dependencies = [

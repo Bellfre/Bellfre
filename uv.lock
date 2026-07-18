@@ -27,7 +27,7 @@ wheels = [
 
 [[package]]
 name = "bellfre"
-version = "0.7.0"
+version = "0.9b0"
 source = { editable = "." }
 dependencies = [
     { name = "openai" },

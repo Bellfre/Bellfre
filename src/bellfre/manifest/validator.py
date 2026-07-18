@@ -1,40 +1,40 @@
 """
 Bellfre Manifest Validator
 
-Validates the minimum required fields
-for a Bellfre Manifest v1.0.
+Validates a Bellfre Manifest against
+the required manifest schema.
 """
+
+from .schema import REQUIRED_FIELDS
 
 
 class ManifestValidationError(Exception):
-    """Raised when a manifest fails validation."""
+    """
+    Raised when a Bellfre Manifest fails validation.
+    """
     pass
 
 
 def validate_manifest(manifest: dict) -> bool:
     """
-    Validate a Bellfre manifest.
+    Validate a Bellfre Manifest.
+
+    Args:
+        manifest:
+            Parsed manifest dictionary
 
     Returns:
         True if valid
 
     Raises:
-        ManifestValidationError if invalid
+        ManifestValidationError:
+            If required fields are missing
     """
 
-    required_fields = [
-        ("manifest", "version"),
-        ("agent", "bui"),
-        ("agent", "name"),
-        ("agent", "version"),
-        ("runtime", "language"),
-        ("capabilities",),
-        ("execution", "entrypoint"),
-    ]
-
-    for field in required_fields:
+    for field in REQUIRED_FIELDS:
         if not _has_field(manifest, field):
             path = ".".join(field)
+
             raise ManifestValidationError(
                 f"Missing required field: {path}"
             )
