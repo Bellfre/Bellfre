@@ -5,6 +5,7 @@ Provides in-memory registration and discovery
 of Bellfre agent identities.
 """
 
+from .record import RegistryRecord
 
 class AgentRegistry:
     """
@@ -13,22 +14,26 @@ class AgentRegistry:
 
     def __init__(self):
 
-        self.agents = []
+        self.records = []
 
-    def register(self, identity):
+    def register(self, identity, **kwargs):
         """
-        Register a Bellfre agent identity.
+        Register a Bellfre agent.
         """
 
-        self.agents.append(identity)
+        record = RegistryRecord(
+            identity,
+            **kwargs
+        )
+
+        self.records.append(record)
+
+        return record
 
     def find(self, capability_id: str):
-        """
-        Find agents supporting a capability.
-        """
 
         return [
-            agent
-            for agent in self.agents
-            if agent.supports(capability_id)
+            record
+            for record in self.records
+            if record.supports(capability_id)
         ]

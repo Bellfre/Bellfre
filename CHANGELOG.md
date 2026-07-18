@@ -7,10 +7,23 @@ All notable changes to this project will be documented in this file.
 
 
 
+### FEATURES
+
+
+- 0.9.1b: add agent registry prototype
+
+
+
+## v0.9b0
+
+
+
 ### DOCUMENTATION
 
 
 - update README.md
+
+- 0.9b.0 readme
 
 
 

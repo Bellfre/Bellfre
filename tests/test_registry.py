@@ -31,7 +31,7 @@ def test_registry_register_and_find():
     )
 
     assert len(results) == 1
-    assert results[0].name == "Bellfre Calculator"
+    assert results[0].identity.name == "Bellfre Calculator"
 
 
 def test_registry_missing_capability():
@@ -51,3 +51,19 @@ def test_registry_missing_capability():
     )
 
     assert len(results) == 0
+
+def test_registry_returns_record():
+
+    manifest = load_manifest(MANIFEST)
+
+    identity = AgentIdentity(manifest)
+
+    registry = AgentRegistry()
+
+    record = registry.register(
+        identity,
+        endpoint="http://localhost:8000"
+    )
+
+    assert record.bui == "1.301.0304.B42.001"
+    assert record.endpoint == "http://localhost:8000"
