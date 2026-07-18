@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.1b: add agent registry prototype
 
+- 0.9.1a - file cleanup for structural integrity
+
+- 0.9.1.b ci fix
+
 
 
 ## v0.9b0

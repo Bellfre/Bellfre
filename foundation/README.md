@@ -17,6 +17,89 @@ The Foundation exists to ensure that Bellfre's mission, philosophy, and trust mo
 ---
 
 # Our Mission
+# Bellfre Foundation
+
+## Purpose
+
+The Bellfre Foundation defines the principles, specifications, and governance concepts that guide the Bellfre ecosystem.
+
+It exists to answer three fundamental questions:
+
+* **Why does Bellfre exist?**
+* **How should Bellfre evolve?**
+* **What principles should guide future decisions?**
+
+Software implementations will evolve. Technologies will change. New capabilities, standards, and integrations will emerge.
+
+The Foundation exists to ensure that Bellfre's mission, interoperability goals, and trust model remain consistent as the ecosystem develops.
+
+---
+
+# Our Mission
+
+Bellfre exists to create a trusted infrastructure for interoperable AI agents.
+
+Bellfre does not seek to build every agent, control every implementation, or promote a single model provider.
+
+Instead, Bellfre provides the standards, identity concepts, and discovery infrastructure that allow independently developed agents to participate in a shared ecosystem.
+
+Bellfre is designed to make agents:
+
+* Discoverable
+* Understandable
+* Interoperable
+* Verifiable
+* Trustworthy
+
+---
+
+# Guiding Philosophy
+
+Bellfre believes successful ecosystems are built on open participation supported by clear standards.
+
+Innovation should be encouraged.
+
+Trust should be protected.
+
+Governance should be transparent.
+
+Standards should evolve thoughtfully.
+
+The purpose of Bellfre is not to limit what developers create.
+
+The purpose is to allow compatible systems to work together without sacrificing identity, provenance, transparency, or trust.
+
+---
+
+# The Foundation First Principle
+
+When making technical, architectural, or governance decisions, contributors should begin with the Foundation.
+
+Before asking:
+
+> "Can we build this?"
+
+we should first ask:
+
+* Does this improve interoperability?
+* Does this preserve trust?
+* Does this improve transparency?
+* Does this support long-term sustainability?
+* Does this align with Bellfre's mission?
+
+A technically impressive solution that weakens interoperability or trust should be reconsidered.
+
+A solution that strengthens both technology and ecosystem value should be encouraged.
+
+The Foundation exists to guide decisions, not simply document them.
+
+---
+
+# Foundation Structure
+
+The Foundation contains the standards, principles, and experimental concepts that guide Bellfre development.
+
+Current structure:
 
 Bellfre exists to create a trusted infrastructure for interoperable AI agents. 
 
