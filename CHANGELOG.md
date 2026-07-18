@@ -33,6 +33,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.0a: add Bellfre manifest foundation and validation
 
+- 0.9.0: manifest runtime integration and validation
+
 
 
 ## v0.7.7

@@ -136,7 +136,16 @@ Bellfre does not replace agent runtimes or communication protocols.
 
 It provides the identity and discovery foundation that allows those systems to scale.
 
-And, Bellfre is being developed as a layered platform:
+## Architecture
+
+Bellfre is being developed as a lightweight identity and discovery layer for AI agents.
+
+The design principle:
+
+> Agents should be able to describe who they are, what they can do, and how they can be discovered without depending on a specific runtime or communication protocol.
+
+Current architecture:
+
 
     Bellfre
     |
@@ -155,25 +164,68 @@ And, Bellfre is being developed as a layered platform:
     └── Programs
         └── Reference agent implementations
 
-##  Current Implementation
+Bellfre
+|
+├── Manifest
+│ └── Agent identity and capability metadata
+│
+├── Identity
+│ └── BUI and publisher identity
+│
+├── Discovery
+│ └── Agent lookup and capability discovery
+│
+├── Registry
+│ └── Agent registration and records
+│
+└── Programs
+└── Reference Bellfre-enabled agents
+
+
+The current implementation begins with the Manifest layer.
+A Bellfre-enabled program contains a `bellfre.yaml` manifest:
+
+programs/
+└── calculator/
+├── bellfre.yaml
+└── run.py
+
+
+At startup, a Bellfre program loads and validates its manifest:
+
+bellfre.yaml
+|
+v
+Manifest Loader
+|
+v
+Manifest Validator
+|
+v
+Agent Runtime
+
+
+This establishes the identity foundation required for future discovery and registry services.
+
+---
+
+## Current Implementation
 
 The current reference implementation includes:
 
     Python SDK foundation
-    Bellfre Manifest loading
-    Manifest validation
+    Bellfre Manifest loading and validation
+    Manifest-based agent identity
     Capability-based agent structure
-    Example calculator agent
+    Example calculator program
 
 Current development focuses on:
 
     Manifest specification stabilization
+    Agent identity model
     Registry architecture
-    Agent publishing workflows
+    Publishing workflows
     A2A interoperability
-    Development Setup
-
-Bellfre uses uv for Python package and dependency management.
 
 # Requirements
     Python 3.10+
@@ -191,19 +243,23 @@ Run the calculator program:
 
 Bellfre is currently in active prototype development.
 
-# Completed
+## Completed
+
     Capability-based agent architecture
     Reasoning policy architecture
     Provider abstraction
     Bellfre Manifest v1 foundation
     Python package structure
     Manifest loading and validation
-    Current Work
+    Calculator reference program
+
+## Current Work
+
     Manifest schema definitions
-    Agent registry design
+    Agent identity model
+    Registry design
     Publishing workflow
     A2A interoperability layer
-    Why Bellfre?
 
 # The future of AI is likely to be a network of specialized agents:
 
