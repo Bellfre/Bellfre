@@ -9,7 +9,7 @@ from pathlib import Path
 import yaml
 
 
-def load_manifest(filename: str) -> dict:
+def load_manifest(filename: str | Path) -> dict:
     """
     Load a Bellfre manifest YAML file.
 
