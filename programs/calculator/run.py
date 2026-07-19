@@ -1,15 +1,18 @@
 """
-Bellfre Example Agent Runner v0.3
+Bellfre Example Agent Runner v0.4
 
-Loads a Bellfre agent from its Bellfre Manifest.
+Loads a Bellfre agent from its Bellfre Manifest
+and demonstrates capability discovery.
 """
 
-from bellfre.discovery import Discovery
-from bellfre.identity import AgentIdentity
 from bellfre.manifest import (
     load_manifest,
     validate_manifest,
 )
+
+from bellfre.capability import CapabilityRequest
+from bellfre.discovery import Discovery
+from bellfre.identity import AgentIdentity
 from bellfre.registry import AgentRegistry
 
 from agent import Agent
@@ -22,7 +25,10 @@ from capabilities.reasoning.reasoning import ReasoningCapability
 # Load and validate the Bellfre Manifest
 # ------------------------------------------------------------------
 
-manifest = load_manifest("programs/calculator/bellfre.yaml")
+manifest = load_manifest(
+    "programs/calculator/bellfre.yaml"
+)
+
 validate_manifest(manifest)
 
 
@@ -30,7 +36,9 @@ validate_manifest(manifest)
 # Create the agent using manifest metadata
 # ------------------------------------------------------------------
 
-agent = Agent(manifest["agent"]["name"])
+agent = Agent(
+    manifest["agent"]["name"]
+)
 
 
 # ------------------------------------------------------------------
@@ -40,51 +48,103 @@ agent = Agent(manifest["agent"]["name"])
 # Capabilities will be loaded dynamically from the manifest.
 # ------------------------------------------------------------------
 
-agent.add_capability(CalculatorCapability())
-agent.add_capability(ReasoningCapability())
+agent.add_capability(
+    CalculatorCapability()
+)
+
+agent.add_capability(
+    ReasoningCapability()
+)
 
 
 # ------------------------------------------------------------------
-# Bellfre Identity & Discovery
+# Bellfre Discovery
 # ------------------------------------------------------------------
 
-identity = AgentIdentity(manifest)
+identity = AgentIdentity(
+    manifest
+)
 
 registry = AgentRegistry()
 
-registry.register(identity)
+registry.register(
+    identity
+)
 
-discovery = Discovery(registry)
+discovery = Discovery(
+    registry
+)
 
-capability = manifest["capabilities"][0]["id"]
+request = CapabilityRequest(
+    "arithmetic.calculate"
+)
 
-matches = discovery.find(capability)
+providers = discovery.find(
+    request
+)
 
 
 # ------------------------------------------------------------------
 # Startup
 # ------------------------------------------------------------------
 
-print("\nProgram:")
-print("---------------------------------")
-print(f"{agent.name}, Agent: v{manifest['agent']['version']}")
+print(
+    f"{agent.name} v{manifest['agent']['version']} ready"
+)
+
 
 print("\nBellfre Unique Identifier (BUI):")
 print("---------------------------------")
-print(f"{manifest['agent']['bui']}")
+print(
+    manifest["agent"]["bui"]
+)
+
+
+# ------------------------------------------------------------------
+# Discovery Output
+# ------------------------------------------------------------------
 
 print("\nDiscovery:")
 print("---------------------------------")
-for record in matches:
+
+print("Request:")
+print(
+    f"  {request.capability_id}"
+)
+
+
+print("\nResolved Provider:")
+
+if providers:
+
+    provider = providers[0]
+
     print(
-        f"✓ {record.identity.name}"
+        f"  {provider.name}"
     )
+
+    print(
+        f"  BUI: {provider.bui}"
+    )
+
+else:
+
+    print("  None")
+
+
+# ------------------------------------------------------------------
+# Capabilities
+# ------------------------------------------------------------------
 
 print("\nCapabilities:")
 print("---------------------------------")
+
 for capability in agent.capabilities:
-    print(f"- {capability.capability_id}")
-print("\n")
+
+    print(
+        f"- {capability.capability_id}"
+    )
+
 
 # ------------------------------------------------------------------
 # REPL
@@ -97,6 +157,8 @@ while True:
     if user.lower() == "exit":
         break
 
-    response = agent.think(user)
+    response = agent.think(
+        user
+    )
 
     print(response)
