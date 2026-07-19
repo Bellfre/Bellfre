@@ -4,6 +4,7 @@ Discovery tests.
 
 from pathlib import Path
 
+from bellfre.capability import CapabilityRequest
 from bellfre.discovery import Discovery
 from bellfre.identity import AgentIdentity
 from bellfre.manifest import load_manifest
@@ -24,9 +25,11 @@ def test_discovery_empty_registry():
 
     discovery = Discovery(registry)
 
-    results = discovery.find(
+    request = CapabilityRequest(
         "arithmetic.calculate"
     )
+
+    results = discovery.find(request)
 
     assert results == []
 
@@ -43,14 +46,21 @@ def test_discovery_finds_agent():
 
     discovery = Discovery(registry)
 
-    results = discovery.find(
+    request = CapabilityRequest(
         "arithmetic.calculate"
     )
 
+    results = discovery.find(request)
+
     assert len(results) == 1
+
+    provider = results[0]
+
+    assert provider.name == "Bellfre Calculator"
+    assert provider.bui == "1.301.0304.B42.001"
     assert (
-        results[0].identity.name
-        == "Bellfre Calculator"
+        provider.capability_id
+        == "arithmetic.calculate"
     )
 
 
@@ -66,9 +76,11 @@ def test_discovery_unknown_capability():
 
     discovery = Discovery(registry)
 
-    results = discovery.find(
+    request = CapabilityRequest(
         "weather.forecast"
     )
+
+    results = discovery.find(request)
 
     assert results == []
 
@@ -91,8 +103,15 @@ def test_discovery_multiple_agents():
 
     discovery = Discovery(registry)
 
-    results = discovery.find(
+    request = CapabilityRequest(
         capability
     )
 
+    results = discovery.find(request)
+
     assert len(results) == 2
+
+    assert all(
+        provider.capability_id == capability
+        for provider in results
+    )
