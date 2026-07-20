@@ -58,3 +58,26 @@ def test_agent_description_from_manifest():
         "arithmetic.calculate"
         in description.capabilities
     )
+
+def test_agent_description_json():
+
+    description = AgentDescription(
+        bui="1.301.0304.B42.001",
+        name="Bellfre Calculator",
+        version="0.1.0",
+        capabilities=[
+            "arithmetic.calculate",
+        ],
+    )
+
+    result = description.to_json()
+
+    assert (
+        '"name": "Bellfre Calculator"'
+        in result
+    )
+
+    assert (
+        '"arithmetic.calculate"'
+        in result
+    )

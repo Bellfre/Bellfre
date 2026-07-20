@@ -15,6 +15,8 @@ It does not handle:
 - Transport protocols
 """
 
+import json
+
 
 class AgentDescription:
     """
@@ -50,13 +52,16 @@ class AgentDescription:
             "capabilities": self.capabilities,
         }
 
-    def __repr__(self):
-        return (
-            f"AgentDescription("
-            f"name={self.name}, "
-            f"bui={self.bui})"
+    def to_json(self) -> str:
+        """
+        Serialize description to JSON.
+        """
+
+        return json.dumps(
+            self.to_dict(),
+            indent=2,
         )
-    
+
     @classmethod
     def from_manifest(cls, manifest: dict):
         """
@@ -82,4 +87,11 @@ class AgentDescription:
                 "unknown"
             ),
             capabilities=capabilities,
+        )
+
+    def __repr__(self):
+        return (
+            f"AgentDescription("
+            f"name={self.name}, "
+            f"bui={self.bui})"
         )
