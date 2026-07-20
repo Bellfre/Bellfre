@@ -38,6 +38,10 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.4 3b - complete - add capability
 
+- 0.9.5 task 1 - create record
+
+- 0.9.5 tasl 2 - complete
+
 
 
 ## v0.9b0

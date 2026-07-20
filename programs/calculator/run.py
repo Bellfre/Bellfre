@@ -20,6 +20,9 @@ from agent import Agent
 from capabilities.calculator.calculator import CalculatorCapability
 from capabilities.reasoning.reasoning import ReasoningCapability
 
+from bellfre.agent.description import AgentDescription
+from bellfre.agent.record import AgentRecord
+
 
 # ------------------------------------------------------------------
 # Load and validate the Bellfre Manifest
@@ -61,15 +64,20 @@ agent.add_capability(
 # Bellfre Discovery
 # ------------------------------------------------------------------
 
-identity = AgentIdentity(
+identity = AgentIdentity(manifest)
+
+description = AgentDescription.from_manifest(
     manifest
+)
+
+agent_record = AgentRecord(
+    identity,
+    description,
 )
 
 registry = AgentRegistry()
 
-registry.register(
-    identity
-)
+registry.register(agent_record)
 
 discovery = Discovery(
     registry
