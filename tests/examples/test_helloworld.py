@@ -1,14 +1,19 @@
-import sys
 from pathlib import Path
+import sys
 
-sys.path.append(
-    str(
-        Path(__file__)
-        .parent.parent.parent.parent
-        / "examples"
-        / "helloworld"
-    )
+
+EXAMPLE_PATH = (
+    Path(__file__)
+    .parents[2]
+    / "examples"
+    / "helloworld"
 )
+
+sys.path.insert(
+    0,
+    str(EXAMPLE_PATH)
+)
+
 
 from capability import GreetingCapability
 

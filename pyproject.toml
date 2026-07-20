@@ -23,3 +23,8 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.15.21",
 ]
+
+[tool.pyright]
+extraPaths = [
+    "examples/helloworld"
+]
