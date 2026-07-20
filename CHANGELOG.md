@@ -10,6 +10,19 @@ All notable changes to this project will be documented in this file.
 ### FEATURES
 
 
+- 0.9.5 task 5a; final cleanup
+
+- fix CI error in helloworld
+
+
+
+## v0.9.5
+
+
+
+### FEATURES
+
+
 - 0.9.1b: add agent registry prototype
 
 - 0.9.1a - file cleanup for structural integrity
