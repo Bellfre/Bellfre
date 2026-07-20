@@ -10,21 +10,29 @@ All notable changes to this project will be documented in this file.
 ### FEATURES
 
 
-- 0.9.1a: add agent registry prototype
+- 0.9.1b: add agent registry prototype
 
-- 0.9.1b: - file cleanup for structural integrity
+- 0.9.1a - file cleanup for structural integrity
 
-- 0.9.1.c: ci fix
+- 0.9.1.b ci fix
 
 - 0.9.1: stabilize foundation and SDK architecture
 
-- 0.9.2 milestone: - add discovery
+- 0.9.2 milestone - add discovery
 
-- 0.9.3 task 1: Capability Resolution
+- 0.9.3 Capability Resolution
 
-- 0.9.3 task 2: add provider
+- 0.9.3 task 2 - add provider
 
 - 0.9.3 task 3: discovery complete
+
+- 0.9.3 task 4: update example\calculator\run.py to use sdk
+
+- 0.9.4 task 1 - add sdk README.md file
+
+- 0.9.4 task 2b - complete
+
+- 0.9.4 task 2c - complete
 
 
 
