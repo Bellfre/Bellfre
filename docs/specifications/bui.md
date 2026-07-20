@@ -4,7 +4,7 @@ MAJOR.PUBLISHER.PRODUCT.INSTANCE
 
 Example:
 
-1.000.0000.0001
+1.000.0000.0001* SEE BELOW
 
 Components:
 
@@ -59,4 +59,23 @@ bui:
   REQUIRED
   MUST follow Bellfre BUI specification
 
+## re-defined as of 7-20 
 
+My preference: lock the grammar now as fixed width.
+
+I would lean:
+
+N.AAAA.AAAA.AAAAA.NNNN
+
+because the authority/org block is the one most likely to need expansion:
+
+1.0301.0304.00B42.0001
+
+That gives:
+
+category: 4 chars
+locale: 4 chars
+authority: 5 chars
+entity: 4 digits
+
+The important thing: this belongs in the BUI specification, then AgentIdentity validation enforces it. The registry and discovery layers should remain completely unaware of the internal BUI grammar.

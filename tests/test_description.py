@@ -15,7 +15,7 @@ MANIFEST = (
 def test_agent_description():
 
     description = AgentDescription(
-        bui="1.301.0304.B42.001",
+        bui="1.0301.0304.00B42.0001",
         name="Bellfre Calculator",
         version="0.1.0",
         capabilities=[
@@ -26,7 +26,7 @@ def test_agent_description():
 
     result = description.to_dict()
 
-    assert result["bui"] == "1.301.0304.B42.001"
+    assert result["bui"] == "1.0301.0304.00B42.0001"
     assert result["name"] == "Bellfre Calculator"
 
     assert (
@@ -50,8 +50,7 @@ def test_agent_description_from_manifest():
     )
 
     assert (
-        description.bui
-        == "1.301.0304.B42.001"
+        description.bui == "1.0301.0304.00B42.0001"
     )
 
     assert (
@@ -62,7 +61,7 @@ def test_agent_description_from_manifest():
 def test_agent_description_json():
 
     description = AgentDescription(
-        bui="1.301.0304.B42.001",
+        bui="1.0301.0304.00B42.0001",
         name="Bellfre Calculator",
         version="0.1.0",
         capabilities=[

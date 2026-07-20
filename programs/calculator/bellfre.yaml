@@ -4,10 +4,10 @@ manifest:
 agent:
 
   # Permanent Bellfre Unique Identifier
-  bui: "1.301.0304.B42.001"
+  bui: "1.0301.0304.00B42.0001"
 
   # Registered publisher identifier
-  publisher_slug: "B42"
+  publisher_slug: "00B42"
 
   publisher:
     name: "Bellfre"

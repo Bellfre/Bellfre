@@ -7,7 +7,7 @@ def test_agent_record():
 
     manifest = {
         "agent": {
-            "bui": "1.000.0000.0001",
+            "bui": "1.0000.0000.00000.0001",
             "name": "Bellfre HelloWorld",
         },
         "capabilities": [
@@ -35,7 +35,7 @@ def test_agent_record():
 
     assert (
         record.bui
-        == "1.000.0000.0001"
+        == "1.0000.0000.00000.0001"
     )
 
     assert (

@@ -4,6 +4,7 @@ Bellfre Agent Identity
 Provides a normalized identity object
 created from a validated Bellfre Manifest.
 """
+from .bui import validate_bui
 
 
 class AgentIdentity:
@@ -17,6 +18,12 @@ class AgentIdentity:
         agent = manifest["agent"]
 
         self.bui = agent["bui"]
+
+        if not validate_bui(self.bui):
+            raise ValueError(
+                f"Invalid BUI format: {self.bui}"
+            )
+                
         self.name = agent["name"]
         self.version = agent.get("version")
 

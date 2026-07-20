@@ -68,7 +68,7 @@ def test_discovery_finds_agent():
     provider = results[0]
 
     assert provider.name == "Bellfre Calculator"
-    assert provider.bui == "1.301.0304.B42.001"
+    assert provider.bui == "1.0301.0304.00B42.0001"
     assert (
         provider.capability_id
         == "arithmetic.calculate"

@@ -92,5 +92,5 @@ def test_registry_returns_record():
         endpoint="http://localhost:8000"
     )
 
-    assert record.bui == "1.301.0304.B42.001"
+    assert record.bui == "1.0301.0304.00B42.0001"
     assert record.endpoint == "http://localhost:8000"

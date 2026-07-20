@@ -22,7 +22,7 @@ def test_agent_identity():
     )
 
     assert identity.name == "Bellfre Calculator"
-    assert identity.bui == "1.301.0304.B42.001"
+    assert identity.bui == "1.0301.0304.00B42.0001"
 
     
 def test_agent_identity_supports_capability():

@@ -42,6 +42,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.5 tasl 2 - complete
 
+- 0.9.5 Task 3 complete — AgentRecord export pipeline implemented and tested.
+
 
 
 ## v0.9b0

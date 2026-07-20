@@ -83,7 +83,7 @@ Example:
 
 ```yaml
 agent:
-  bui: 1.301.0304.B42.001
+  bui: 1.0301.0304.00B42.001
   name: Bellfre Calculator
 
 capabilities:
