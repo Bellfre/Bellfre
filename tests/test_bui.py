@@ -62,7 +62,7 @@ def test_parse_bui():
     assert bui.entity == "0001"
 
 
-def test_bui_roundtrip():
+def test_bui_round_trip():
 
     value = (
         "1.0301.0304.00B42.0001"
@@ -70,5 +70,20 @@ def test_bui_roundtrip():
 
     bui = BellfreBUI(value)
 
+    assert bui.value == value
     assert str(bui) == value
 
+
+def test_bui_to_dict():
+
+    bui = BellfreBUI(
+        "1.0301.0304.00B42.0001"
+    )
+
+    result = bui.to_dict()
+
+    assert result["version"] == "1"
+    assert result["category"] == "0301"
+    assert result["locale"] == "0304"
+    assert result["authority"] == "00B42"
+    assert result["entity"] == "0001"

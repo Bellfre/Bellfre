@@ -38,6 +38,8 @@ class BellfreBUI:
                 f"Invalid BUI format: {value}"
             )
 
+        self._value = value
+
         (
             self.version,
             self.category,
@@ -49,16 +51,17 @@ class BellfreBUI:
 
     @property
     def value(self) -> str:
-        return (
-            f"{self.version}."
-            f"{self.category}."
-            f"{self.locale}."
-            f"{self.authority}."
-            f"{self.entity}"
-        )
+        """
+        Return original BUI value.
+        """
+
+        return self._value
 
 
     def to_dict(self) -> dict:
+        """
+        Convert parsed BUI into a dictionary.
+        """
 
         return {
             "version": self.version,
@@ -70,7 +73,6 @@ class BellfreBUI:
 
 
     def __str__(self):
-
         return self.value
 
 
@@ -78,6 +80,9 @@ class BellfreBUI:
 def validate_bui(
     value: str,
 ) -> bool:
+    """
+    Validate a Bellfre Unique Identifier.
+    """
 
     try:
         BellfreBUI(value)

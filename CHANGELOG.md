@@ -46,6 +46,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.5 task 4 - Establish BUI v1 format and validation
 
+- 0.9.5 task 5 - identity foundation
+
 
 
 ## v0.9b0
