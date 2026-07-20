@@ -9,6 +9,8 @@ from bellfre.discovery import Discovery
 from bellfre.identity import AgentIdentity
 from bellfre.manifest import load_manifest
 from bellfre.registry import AgentRegistry
+from bellfre.agent.description import AgentDescription
+from bellfre.agent.record import AgentRecord
 
 
 MANIFEST = (
@@ -40,9 +42,18 @@ def test_discovery_finds_agent():
 
     identity = AgentIdentity(manifest)
 
+    description = AgentDescription.from_manifest(
+        manifest
+    )
+
+    agent_record = AgentRecord(
+        identity,
+        description,
+    )
+
     registry = AgentRegistry()
 
-    registry.register(identity)
+    registry.register(agent_record)
 
     discovery = Discovery(registry)
 
@@ -70,9 +81,18 @@ def test_discovery_unknown_capability():
 
     identity = AgentIdentity(manifest)
 
+    description = AgentDescription.from_manifest(
+        manifest
+    )
+
+    record = AgentRecord(
+        identity,
+        description,
+    )
+
     registry = AgentRegistry()
 
-    registry.register(identity)
+    registry.register(record)
 
     discovery = Discovery(registry)
 
@@ -92,14 +112,30 @@ def test_discovery_multiple_agents():
     capability = manifest["capabilities"][0]["id"]
 
     identity1 = AgentIdentity(manifest)
+    description1 = AgentDescription.from_manifest(
+        manifest
+    )
+
+    record1 = AgentRecord(
+        identity1,
+        description1,
+    )
+
 
     identity2 = AgentIdentity(manifest)
+    description2 = AgentDescription.from_manifest(
+        manifest
+    )
+
+    record2 = AgentRecord(
+        identity2,
+        description2,
+    )
 
     registry = AgentRegistry()
 
-    registry.register(identity1)
-
-    registry.register(identity2)
+    registry.register(record1)
+    registry.register(record2)
 
     discovery = Discovery(registry)
 

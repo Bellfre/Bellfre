@@ -3,6 +3,8 @@ from pathlib import Path
 from bellfre.manifest import load_manifest
 from bellfre.identity import AgentIdentity
 from bellfre.registry import AgentRegistry
+from bellfre.agent.record import AgentRecord
+from bellfre.agent.description import AgentDescription
 
 
 MANIFEST = (
@@ -18,13 +20,20 @@ def test_registry_register_and_find():
 
     manifest = load_manifest(MANIFEST)
 
-    identity = AgentIdentity(
+    identity = AgentIdentity(manifest)
+
+    description = AgentDescription.from_manifest(
         manifest
+    )
+
+    record = AgentRecord(
+        identity,
+        description,
     )
 
     registry = AgentRegistry()
 
-    registry.register(identity)
+    registry.register(record)
 
     results = registry.find(
         "arithmetic.calculate"
@@ -42,9 +51,18 @@ def test_registry_missing_capability():
         manifest
     )
 
+    description = AgentDescription.from_manifest(
+        manifest
+    )
+
+    agent_record = AgentRecord(
+        identity,
+        description,
+    )
+
     registry = AgentRegistry()
 
-    registry.register(identity)
+    registry.register(agent_record)
 
     results = registry.find(
         "finance.analyze"
@@ -56,12 +74,21 @@ def test_registry_returns_record():
 
     manifest = load_manifest(MANIFEST)
 
-    identity = AgentIdentity(manifest)
-
     registry = AgentRegistry()
 
-    record = registry.register(
+    identity = AgentIdentity(manifest)
+
+    description = AgentDescription.from_manifest(
+        manifest
+    )
+
+    agent_record = AgentRecord(
         identity,
+        description,
+    )
+
+    record = registry.register(
+        agent_record,
         endpoint="http://localhost:8000"
     )
 

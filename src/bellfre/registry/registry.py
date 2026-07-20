@@ -2,10 +2,11 @@
 Bellfre Agent Registry
 
 Provides in-memory registration and discovery
-of Bellfre agent identities.
+of Bellfre agent records.
 """
 
 from .record import RegistryRecord
+
 
 class AgentRegistry:
     """
@@ -16,13 +17,17 @@ class AgentRegistry:
 
         self.records = []
 
-    def register(self, identity, **kwargs):
+    def register(
+        self,
+        agent_record,
+        **kwargs
+    ):
         """
-        Register a Bellfre agent.
+        Register a Bellfre agent record.
         """
 
         record = RegistryRecord(
-            identity,
+            agent_record,
             **kwargs
         )
 
@@ -30,7 +35,10 @@ class AgentRegistry:
 
         return record
 
-    def find(self, capability_id: str):
+    def find(
+        self,
+        capability_id: str
+    ):
 
         return [
             record
