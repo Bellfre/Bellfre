@@ -5,12 +5,15 @@ Demonstrates:
 - Loading a Bellfre manifest
 - Creating an AgentDescription
 - Exporting agent metadata
+- Executing a capability
 """
 
 from pathlib import Path
 
 from bellfre.manifest import load_manifest
 from bellfre.agent.description import AgentDescription
+
+from capability import GreetingCapability
 
 
 MANIFEST = (
@@ -32,6 +35,14 @@ def main():
 
     print(
         description.to_json()
+    )
+
+    capability = GreetingCapability()
+
+    print(
+        capability.execute(
+            "hello"
+        )
     )
 
 

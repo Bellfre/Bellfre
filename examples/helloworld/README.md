@@ -12,4 +12,23 @@ The HelloWorld example demonstrates:
 - Creating an agent description from the manifest
 - Exporting the description as JSON
 
-The flow:
+
+
+
+
+## updated
+
+Agent Description
+      |
+      v
+Portable JSON
+
+Update it to:
+
+Agent Description
+      |
+      v
+Capability
+      |
+      v
+Execution

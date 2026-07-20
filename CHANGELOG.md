@@ -34,6 +34,8 @@ All notable changes to this project will be documented in this file.
 
 - 0.9.4 task 2c - complete
 
+- 0.9.4 task 3a - complete - create helloworld
+
 
 
 ## v0.9b0
