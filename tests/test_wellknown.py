@@ -1,6 +1,9 @@
 from bellfre.agent.record import AgentRecord
 from bellfre.agent.description import AgentDescription
-from bellfre.identity import AgentIdentity
+from bellfre.identity import (
+    AgentIdentity,
+    validate_bui,
+)
 from bellfre.manifest import load_manifest
 from bellfre.wellknown import (
     create_agent_document,
@@ -12,7 +15,7 @@ MANIFEST = (
 )
 
 
-def test_create_agent_document():
+def build_record():
 
     manifest = load_manifest(
         MANIFEST
@@ -27,10 +30,15 @@ def test_create_agent_document():
         .from_manifest(manifest)
     )
 
-    record = AgentRecord(
+    return AgentRecord(
         identity,
         description,
     )
+
+
+def test_create_agent_document():
+
+    record = build_record()
 
     document = (
         create_agent_document(
@@ -43,6 +51,10 @@ def test_create_agent_document():
         == record.bui
     )
 
+    assert validate_bui(
+        document["bui"]
+    )
+
     assert (
         document["name"]
         == "Bellfre Calculator"
@@ -52,3 +64,23 @@ def test_create_agent_document():
         "arithmetic.calculate"
         in document["capabilities"]
     )
+
+
+def test_agent_document_shape():
+
+    record = build_record()
+
+    document = (
+        create_agent_document(
+            record
+        )
+    )
+
+    assert set(
+        document.keys()
+    ) == {
+        "bui",
+        "name",
+        "version",
+        "capabilities",
+    }
