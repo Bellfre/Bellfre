@@ -359,3 +359,18 @@ The Bellfre SDK specifications define the stable contracts used throughout the S
 | Registry      | Agent registration model          |
 | Discovery     | Capability discovery workflow     |
 | Well-Known    | Portable agent document           |
+
+## Updating and Changing notes:
+
+Bellfre SDK follows semantic versioning.
+
+1.x guarantees API stability.
+
+Breaking API changes require a major version.
+
+Minor versions add functionality.
+
+Patch versions fix bugs and documentation.
+
+
+7/21/2026: v1.0.0-rc1

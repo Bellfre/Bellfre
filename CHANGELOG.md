@@ -14,6 +14,10 @@ All notable changes to this project will be documented in this file.
 
 - fix CI error in helloworld
 
+- additional CI fixes
+
+- 0.9.5 task 6: document clean up and specs
+
 
 
 ## v0.9.5
