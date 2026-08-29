@@ -1,0 +1,72 @@
+
+website workflows
+	user level 1 - possibly free zone
+		index page -> user logs in -> [header] BUI search -> searchable list of BUI / agents ( will want a search option/ drop down as list grows ) -> clearinghouse/bui/list.php -> user clicks on BUI detail line item -> clearinghouse/bui/details.php
+	user level 2 - includes level 1 access - possibly free or pd 
+		index page -> user logs in -> [user dropdown] -> publisher Details -> review their agents -> click on agent details link -> clearinghouse/agents/details.php details for agent
+	admin level -> off limits
+		index page -> admin logs in -> dashboard -> System info / user info / agent info / BUI info 
+		internal manual & automatec injestions tools
+		internal agent assignment and mgnt
+	No User info
+		ndex page -> no log in -> articles
+		index page -> no log in -> SDK link
+		
+		
+		
+this should break out as follows;
+
+				bui::[     ]::00-simple-agent::openAI::a2a	
+				bui::bellfre::00-calculator  ::openAI::a2a
+				  |     |            |           |      |
+				  |     |            |           |      |
+				  |     |            |           |      |
+1.99909.0101.00B42.0001 |            |           |      | 	
+						|            |           |      |	
+					Publisher        |           |      |	
+					(00B42) 	     |           |      a2a compliant aka we can create a .wellknown card for it	
+					              name          runs
+												on aka platform
+
+going back to our taxonomy;
+BUI	Bellfre Unique Identifier	A persistent Bellfre registry identifier assigned to an agent/example	🟢 Still fits
+BAT	Bellfre Agent Tags	Structured metadata describing an agent's identity, capabilities, protocols, etc.	🟡 Needs tightening
+
+
+the actual program has the unique BUI tag, as defined and established
+the bui (as we call it now) is actually the BAT, the agent tag
+
+remember, the BUI is the luggage, the BAT is the luggage tag
+
+I think we got in the weeds on this, but no worries, this is part of the process. 
+
+finally,not sure on /clearinghouse/tags/list.php & details, but it seems most descriptive??
+
+
+Publishers Dashboard; http://bellfre/clearinghouse/publisher/dashboard.php -> bui:: 1.99909.0101.00B42.0001 -> http://bellfre/clearinghouse/agents/details.php?id=1 [pass]
+
+test 1
+BAT List: http://bellfre/clearinghouse/tags/list.php -> bat::bellfre::18-context-compression -> http://bellfre/clearinghouse/tags/details.php?id=286 [I believe this to be correct]
+BAT List: http://bellfre/clearinghouse/tags/list.php -> bat::bellfre::18-context-compression -> http://bellfre/clearinghouse/tags/details.php?id=286 -> BUI 1.00000.0000.0000.0000 [bangs dead -- needs placeholder or something]
+
+test1
+BAT Details; http://bellfre/clearinghouse/tags/details.php?id=50 -> bat::openai::00-simple-agent -> opens self [pass]
+BAT Details; http://bellfre/clearinghouse/tags/details.php?id=50 -> 1.99909.0101.00B42.0001 -> http://bellfre/clearinghouse/agents/details.php?id=1 [pass]
+
+
+Bottom line
+
+Don't redesign this. We're very close.
+
+The remaining fix is:
+
+BAT ID = bat_registry.bui_id
+BAT identifier = bat_registry.bui_identifier
+Agent ID = agents.agent_id
+BUI = generated from the Agent
+BAT ↔ Agent relationship needs to be resolved correctly
+Never display 1.00000.0000.0000.0000 as a real BUI
+Agent Details and BAT Details should cross-link using IDs, not generated BUI strings
+
+The #286 case is the one we should use as the test case because it exposes the underlying relationship problem that #50 happens to hide.
+

@@ -1,0 +1,117 @@
+ok, EOD. not ready to code yet, still need to work out a more precise workflow and processflow
+
+I agree. Today was the right day to stay at the architecture level rather than jumping into code.
+
+The SDK is now in a solid place (RC 1.0.0 candidate), which means the Registry deserves the same level of design discipline before implementation.
+
+Today's Outcome
+✅ SDK
+RC 1.0.0 candidate is effectively complete.
+Repository renamed to bellfre-sdk and made public.
+Documentation cleaned up and reorganized.
+CI pipeline passing.
+Final validation:
+Ruff ✔
+Pyright ✔
+Pytest (30/30) ✔
+✅ Registry Direction
+
+We clarified several foundational ideas:
+
+The Clearinghouse is the product, not just a registry.
+The Registry stands on its own; the SDK is simply one way to interact with it.
+Identity and discovery are separate concerns.
+Trust should be based on provenance, not arbitrary rankings.
+Publisher-submitted records should be distinguished from indexed or referenced records.
+💰 Business Model
+
+The current thinking is converging on:
+
+Free registration to maximize adoption.
+Paid business features (verification, management, enterprise capabilities).
+Discovery/API services as a long-term revenue stream.
+Tomorrow's Goal
+
+No code.
+
+Design the Clearinghouse like a product.
+
+Phase 1 — Lifecycle
+
+Define the complete lifecycle:
+
+Discover
+    ↓
+Index
+    ↓
+Claim
+    ↓
+Verify
+    ↓
+Publish
+    ↓
+Update
+    ↓
+Deprecate
+    ↓
+Archive
+
+Decide exactly what each stage means and what information is required to move to the next.
+
+Phase 2 — Actors
+
+Identify who interacts with the system:
+
+Visitor
+Publisher
+Organization
+Registry Administrator
+Automated Crawler
+API Client
+AI Agent
+
+Each actor should have a clear set of permissions.
+
+Phase 3 — Core Objects
+
+Before tables or APIs, define the core entities:
+
+Publisher
+Organization
+Agent
+BUI
+BAT
+Capability
+Endpoint
+Discovery Source
+Verification Record
+Phase 4 — Workflow
+
+Walk through real scenarios:
+
+A hobby developer registers an agent.
+A company publishes its first commercial agent.
+Bellfre discovers an agent on GitHub.
+A publisher claims an indexed agent.
+An agent is updated.
+An agent is retired.
+
+If every scenario has a clean, understandable flow, the implementation will follow naturally.
+
+Where We Stand
+
+I'd estimate the overall Bellfre project as:
+
+Component	Status
+SDK	✅ RC 1.0.0 Ready
+BUI Specification	✅ Stable
+Manifest Specification	✅ Stable
+Identity Model	✅ Stable
+Registry Vision	🟡 Architecture Phase
+Clearinghouse Workflow	🔄 Next Focus
+Registry Implementation	⏳ Not Started
+
+The important part is that you're resisting the temptation to code before the workflow is clear. The SDK benefited enormously from that discipline, and I think the Clearinghouse will too.
+
+I have a feeling tomorrow is when Bellfre stops being "an SDK with a future registry" and starts becoming a complete platform with a clear identity, discovery, and trust model. That's the foundation worth getting right before writing the first Registry endpoint.
+

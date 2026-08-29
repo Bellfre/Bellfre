@@ -1,0 +1,43 @@
+Ready. Next move is 0.4.0 Agent Registration.
+
+Start with the smallest useful path:
+
+Agent registration table review
+Confirm fields:
+agent identity
+BUI
+owner/publisher relationship
+capability data
+status
+version
+
+
+Create registration page
+Protected page
+Uses existing security block
+Uses logged-in owner relationship
+Create agent insert workflow
+User submits agent info
+System assigns:
+agent_id
+BUI/agent code (based on current rules)
+owner/publisher_id
+status = draft
+Create lookup page
+Search by:
+BUI
+name
+capability
+publisher
+Dashboard update
+Replace placeholders:
+Total Agents
+Drafts
+Published
+Recent Activity
+
+The goal of 0.4.0 is not a full marketplace. It is:
+
+"A Bellfre user can create a real agent record, store it, and another system can find it."
+
+That gives us the foundation for 0.5.0 API.
